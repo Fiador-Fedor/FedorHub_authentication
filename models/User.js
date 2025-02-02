@@ -14,6 +14,8 @@ const userSchema = new mongoose.Schema({
   shopDescription: { type: String },
   shopAddress: { type: String },
   createdAt: { type: Date, default: Date.now },
+  resetPasswordToken: { type: String }, // New field
+  resetPasswordExpires: { type: Date }, // New field
 });
 
 userSchema.pre("save", async function (next) {
